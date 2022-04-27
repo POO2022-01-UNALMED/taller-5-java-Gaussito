@@ -1,13 +1,18 @@
 package zooAnimales;
+
 import java.util.ArrayList;
 
 public class Reptil extends Animal{
+
 	private static ArrayList<Reptil> listado = new ArrayList<>();
 	public static int iguanas;
 	public static int serpientes;
 	private String colorEscamas;
 	private int largoCola;
-	
+
+
+	// CONSTRUCTORS
+
 	public Reptil() {
 		super(null, 0, null, null);
 		this.colorEscamas = null;
@@ -21,10 +26,36 @@ public class Reptil extends Animal{
 		this.largoCola = largoCola;
 		listado.add(this);
 	}
-	
+
+
+	// GETTERS AND SETTERS
+
+	public static ArrayList<Reptil> getListado() {
+		return listado;
+	}
+
+	public String getColorEscamas() {
+		return colorEscamas;
+	}
+
+	public void setColorEscamas(String colorEscamas) {
+		this.colorEscamas = colorEscamas;
+	}
+
+	public int getLargoCola() {
+		return largoCola;
+	}
+
+	public void setLargoCola(int largoCola) {
+		this.largoCola = largoCola;
+	}
+
 	public static int cantidadReptiles() {
 		return listado.size();
 	}
+
+
+	// METHODS
 
 	@Override
 	public String movimiento() {
@@ -43,28 +74,4 @@ public class Reptil extends Animal{
         return serpiente;
     }
 
-	//-----G E T T E R S   A N D   S E T T E R S-----
-	public static ArrayList<Reptil> getListado() {
-		return listado;
-	}
-
-	public static void setListado(ArrayList<Reptil> listado) {
-		Reptil.listado = listado;
-	}
-
-	public String getColorEscamas() {
-		return colorEscamas;
-	}
-
-	public void setColorEscamas(String colorEscamas) {
-		this.colorEscamas = colorEscamas;
-	}
-
-	public int getLargoCola() {
-		return largoCola;
-	}
-
-	public void setLargoCola(int largoCola) {
-		this.largoCola = largoCola;
-	}
 }

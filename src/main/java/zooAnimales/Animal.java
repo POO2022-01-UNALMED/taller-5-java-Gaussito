@@ -3,13 +3,17 @@ package zooAnimales;
 import gestion.Zona;
 
 public class Animal {
+
 	private static int totalAnimales;
 	private String nombre;
 	private int edad;
 	private String habitat;
 	private String genero;
 	private Zona zona;
-	
+
+
+	// CONSTRUCTOR
+
 	public Animal() {
 		this (null, 0, null, null);
 		
@@ -23,7 +27,7 @@ public class Animal {
 		totalAnimales++;
 	}
 	
-	//-----G E T T E R S   A N D   S E T T E R S-----
+	// GETTER AND SETTER
 	public static int getTotalAnimales() {
 		return totalAnimales;
 	}
@@ -71,15 +75,16 @@ public class Animal {
 	public void setZona(Zona zona) {
 		this.zona = zona;
 	}
-    //-----F I N   G E T T E R S   A N D   S E T T E R S-----
 	
-    
+    // METHODS
+
 	public String movimiento() {
 		return "desplazarse";
 	}
 
 	public static String totalPorTipo() {
-		return "Mamiferos: " + Mamifero.cantidadMamiferos() + "\n" +
+		return
+				"Mamiferos: " + Mamifero.cantidadMamiferos() + "\n" +
                 "Aves: " + Ave.cantidadAves() + "\n" +
                 "Reptiles: " + Reptil.cantidadReptiles() + "\n" +
                 "Peces: " + Pez.cantidadPeces() + "\n" +
@@ -90,10 +95,12 @@ public class Animal {
 	@Override 
 	public String toString() {
 		if(zona != null) 
-			return "Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat +
+			return
+					"Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat +
 					" y mi genero es " + genero + ", la zona en la que me ubico es" + zona + ", en el "+ zona.getZoo().getNombre();
 		else
-			return "Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat +
+			return
+					"Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat +
 					" y mi genero es " + genero;
 	}	
 }

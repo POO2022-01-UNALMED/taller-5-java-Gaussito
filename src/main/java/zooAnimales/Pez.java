@@ -1,13 +1,18 @@
 package zooAnimales;
+
 import java.util.ArrayList;
 
 public class Pez extends Animal{
-	private static ArrayList <Pez> listado= new ArrayList<>();
+
+	private static final ArrayList <Pez> listado= new ArrayList<>();
 	public static int salmones;
 	public static int bacalaos;
 	private String colorEscamas;
 	private int cantidadAletas;
-	
+
+
+	// CONSTRUCTOR
+
 	public Pez() {
 		super(null, 0, null, null);
 		this.colorEscamas = null;
@@ -21,11 +26,34 @@ public class Pez extends Animal{
 		this.cantidadAletas = cantidadAletas;
 		listado.add(this);
 	}
-	
+
+	// GETTERS AND SETTERS
+	public static ArrayList<Pez> getLista() {
+		return listado;
+	}
+
+	public String getColorEscamas() {
+		return colorEscamas;
+	}
+
+	public void setColorEscamas(String colorEscamas) {
+		this.colorEscamas = colorEscamas;
+	}
+
+	public int getCantidadAletas() {
+		return cantidadAletas;
+	}
+
+	public void setCantidadAletas(int cantidadAletas) {
+		this.cantidadAletas = cantidadAletas;
+	}
+
 	public static int cantidadPeces() {
 		return listado.size();
 	}
-	
+
+	// METHODS
+
 	@Override
 	public String movimiento() {
 		return "nadar";
@@ -43,28 +71,4 @@ public class Pez extends Animal{
 		return bacalao; 
 	}
 
-	//-----G E T T E R S   A N D   S E T T E R S-----
-	public static ArrayList<Pez> getLista() {
-		return listado;
-	}
-
-	public static void setLista(ArrayList<Pez> listado) {
-		Pez.listado = listado;
-	}
-
-	public String getColorEscamas() {
-		return colorEscamas;
-	}
-
-	public void setColorEscamas(String colorEscamas) {
-		this.colorEscamas = colorEscamas;
-	}
-
-	public int getCantidadAletas() {
-		return cantidadAletas;
-	}
-
-	public void setCantidadAletas(int cantidadAletas) {
-		this.cantidadAletas = cantidadAletas;
-	}	
 }

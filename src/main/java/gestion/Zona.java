@@ -4,21 +4,26 @@ import java.util.ArrayList;
 import zooAnimales.Animal;
 
 public class Zona {
+
 	private String nombre;
 	private Zoologico Zoo;
 	private ArrayList <Animal> animales = new ArrayList<>();
-	
+
+
+	// CONSTRUCTORS
+
 	public Zona() {
 		this (null, null);
-		
 	}
-	
+
 	public Zona(String nombre, Zoologico zoo) {
 		this.nombre = nombre;
 		Zoo = zoo;
 	}
-	
-	//-----G E T T E R S   A N D   S E T T E R S-----
+
+
+	// GETTERS AND SETTERS
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -39,15 +44,14 @@ public class Zona {
 		return animales;
 	}
 
-	public void setAnimales(ArrayList<Animal> animales) {
-		this.animales = animales;
-	}
+	// METHODS
 
 	public void agregarAnimales(Animal nuevoAnimal) {
 		animales.add(nuevoAnimal);
 	}
-	
+
 	public int cantidadAnimales() {
 		return animales.size();
 	}
+
 }
